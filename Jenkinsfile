@@ -15,10 +15,13 @@ pipeline {
         stage('SonarQube Analysis') {
             steps {
                 withSonarQubeEnv("${SONARQUBE}") {
-                    sh '/opt/homebrew/bin/sonar-scanner'  // 👈 Add full path here
+                    sh 'ls -la'
+                    sh 'cat sonar-project.properties'
+                    sh '/opt/homebrew/bin/sonar-scanner'
                 }
             }
         }
+
 
         stage('Quality Gate') {
             steps {

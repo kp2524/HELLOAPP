@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     tools {
-        sonarQubeScanner 'sonarqube' // Must match name in Jenkins config
+        sonarQubeScanner 'SonarQube' // Must match name in Jenkins config
     }
 
     environment {

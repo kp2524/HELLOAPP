@@ -1,18 +1,14 @@
 pipeline {
     agent any
 
-    tools {
-        sonarQubeScanner 'SonarQube' // Must match name in Jenkins config
-    }
-
     environment {
-        SONARQUBE = 'SonarQube'
+        SONARQUBE = 'SonarQube' // Must match the name in Jenkins > Configure System
     }
 
     stages {
         stage('Clone Code') {
             steps {
-                git 'https://github.com/your-username/HelloApp.git'
+                git 'https://github.com/kp2524/HelloApp.git'
             }
         }
 
